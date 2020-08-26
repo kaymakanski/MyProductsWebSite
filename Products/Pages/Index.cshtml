@@ -1,0 +1,41 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Products</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<div class="table">
+    @foreach (var product in Model.Products)
+    {
+        <div class="card-body">
+            <img src="~/Images/@product.ImagePath">
+            <div class="card-header">
+                <h3 class="card-title">@product.ProductName</h3>
+                @if (product.UnitsInStock.Equals("0"))
+                {
+                    <h5 class="font-italic" style="color:red">Out of Stock</h5>
+                }
+            </div>
+            <div class="table-primary">
+                <p style="padding-left: 30px">Product ID: @product.ProductID</p>
+                <p style="padding-left: 30px">Unit price: @product.UnitPrice</p>
+                @if (product.UnitsInStock.Equals("0"))
+                {
+                    <p style="color:red; padding-left: 30px">Units in stock: @product.UnitsInStock</p>
+                }
+                else
+                {
+                    <p style="color:green; padding-left: 30px">Units in stock: @product.UnitsInStock</p>
+                }
+                <p style="padding-left: 30px">Delivery on: @product.DeliveryOn</p>
+            </div>
+        </div>
+    }
+</div>
+
+
