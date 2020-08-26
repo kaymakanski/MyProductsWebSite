@@ -1,5 +1,5 @@
 # MyProductsWebSite
-Created an ASP.NET Core Web Application project.
+Created an ASP.NET Core Web Application project.\
 First thing to notice is the wwwroot folder which is full of static stuff. It is there where I put my images and the json file, from which I will be pulling my data.
 We can see some dynamic code in the "Pages" folder and the Program.cs and Startup.cs files as well.
 Created a "Models" folder, where I can store my C# model files. Created one model for now in the form of a C# object, which will corespond with the data from the json file, and gave it appropriate properties. I've Overridden its ToString method using the JsonSerializer so that I can convert it to the json file string format.
