@@ -11,27 +11,28 @@
 <div class="table">
     @foreach (var product in Model.Products)
     {
-        <div class="card-body">
-            <img src="~/Images/@product.ImagePath" alt="Cannot display image" width="100" height="100">
+
+        <div class="card mb-3 bg-light">
             <div class="card-header">
+                <img src="~/Images/@product.ImagePath" alt="Cannot display image" width="100" height="100">
                 <h3 class="card-title">@product.ProductName</h3>
                 @if (product.UnitsInStock.Equals("0"))
                 {
-                    <h5 class="font-italic" style="color:red">Out of Stock</h5>
+                    <h5 class="card-text outOfStock">Out of Stock</h5>
                 }
             </div>
-            <div class="table-warning">
-                <p style="padding-left: 30px;">Product ID: @product.ProductID</p>
-                <p style="padding-left: 30px">Unit price: @product.UnitPrice</p>
+            <div class="card-body">
+                <p class="card-text">Product ID: @product.ProductID</p>
+                <p class="card-text">Unit price: @product.UnitPrice</p>
                 @if (product.UnitsInStock.Equals("0"))
                 {
-                    <p style="color:red; padding-left: 30px">Units in stock: @product.UnitsInStock</p>
+                    <p class="card-text outOfStock">Units in stock: @product.UnitsInStock</p>
                 }
                 else
                 {
-                    <p style="color:green; padding-left: 30px">Units in stock: @product.UnitsInStock</p>
+                    <p class="card-text inStock">Units in stock: @product.UnitsInStock</p>
+                    <p class="card-text">Delivery on: @product.DeliveryOn</p>
                 }
-                <p style="padding-left: 30px">Delivery on: @product.DeliveryOn</p>
             </div>
         </div>
     }
