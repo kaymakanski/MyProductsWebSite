@@ -21,18 +21,18 @@
                     <h5 class="font-italic" style="color:red">Out of Stock</h5>
                 }
             </div>
-            <div class="table-primary">
-                <p style="padding-left: 30px">Product ID: @product.ProductID</p>
-                <p style="padding-left: 30px">Unit price: @product.UnitPrice</p>
+            <div class="table-warning">
+                <div style="padding-left: 30px;">Product ID: @product.ProductID</div>
+                <div style="padding-left: 30px">Unit price: @product.UnitPrice</div>
                 @if (product.UnitsInStock.Equals("0"))
                 {
-                    <p style="color:red; padding-left: 30px">Units in stock: @product.UnitsInStock</p>
+                    <div style="color:red; padding-left: 30px">Units in stock: @product.UnitsInStock</div>
                 }
                 else
                 {
-                    <p style="color:green; padding-left: 30px">Units in stock: @product.UnitsInStock</p>
+                    <div style="color:green; padding-left: 30px">Units in stock: @product.UnitsInStock</div>
                 }
-                <p style="padding-left: 30px">Delivery on: @product.DeliveryOn</p>
+                <div style="padding-left: 30px">Delivery on: @product.DeliveryOn</div>
             </div>
         </div>
     }

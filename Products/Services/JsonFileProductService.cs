@@ -24,7 +24,7 @@ namespace MyProductsWebSite.Services
             get { return Path.Combine(WebHostEnvironment.WebRootPath, "data", "mydata.json"); }
         }
 
-        //retrieving the file via deserialization and saving the data in an array: Product[]
+        //retrieving the file via deserialization and saving the data in an IEnumerable array: Product[]
         public IEnumerable<Product> GetProducts()
         {
             using (var fileReader = File.OpenText(JsonFileName))
