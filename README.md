@@ -1,10 +1,9 @@
 # MyProductsWebSite
-Created an ASP.NET Core Web Application project.
-First thing to notice is the wwwroot folder which is full of static stuff. It is there where I put my images and the json file, from which I will be pulling my data.
-We can see some dynamic code in the "Pages" folder and the Program.cs and Startup.cs files as well.
-Created a "Models" folder, where I can store my C# model files. Created one model for now in the form of a C# object, which will corespond with the data from the json file, and gave it appropriate properties. I've Overridden its ToString method using the JsonSerializer so that I can convert it to the json file string format.
-In order for the code to be maintainable for the future as well I've added a Service for the json file. It's purpose is to get the Web host environment, locate the json file and get its filepath so that we can retrieve its data, convert it back via deserialization and save it in an IEnumerable array of Product. 
-Since I created a new Json Product File Service, I added it in the "ConfigureServices" method at the "Startup" file as well, so that the program knows about it.
-From the index.cshtml.cs page, I requested a JsonProductFileService by listing it in the arguments of the IndexModel constructor.
-Since the index page should be able to list out Products, its model the index.cshtml.cs should have a list(or in this case IEnumerable) of those products. So I created it and assigned to it the actual products from the ProductService in the OnGet method.
-In the end I created the visual stuff using html in the index file and some inline style css to make it somewhat pretty.
+Created an ASP.NET Core Web Application project.\
+First thing to notice is the _wwwroot_ folder which holds static data, such as images and the json file.\
+The representational logic is located in the _Pages_ folder.\
+The _Models_ folder holds the C# model files. _Product.cs_ coresponds with the data from the json file, and holds the appropriate properties.\
+The _Service_ folder currently holds only one service: _JsonFileProductService.cs_. This service is responcible for delivering the json data to the frontend for representation purposes. The service was added to the _ConfigureServices_ method at the _Startup_ file, as this is needed so that the service can be accessed.\
+The _JsonProductFileService_ was added in the rguments of the _IndexModel_ constructor so that it can be used in the _index.cshtml.cs_ page.\
+Since the index page should be able to list out products, its model the _index.cshtml.cs_ should have a list(or in this case _IEnumerable_) of those products. The actual products are loaded from the _ProductService_ in the _OnGet_ method.\
+The representational logic uses html and css. The _site.css_ file was extended with two new css classes: _inStock_ and _outOfStock_.
