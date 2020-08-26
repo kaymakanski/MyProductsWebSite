@@ -16,7 +16,7 @@
             <div class="card-header">
                 <img src="~/Images/@product.ImagePath" alt="Cannot display image" width="100" height="100">
                 <h3 class="card-title">@product.ProductName</h3>
-                @if (product.UnitsInStock.Equals("0"))
+                @if (product.UnitsInStock.Equals(0))
                 {
                     <h5 class="card-text outOfStock">Out of Stock</h5>
                 }
@@ -24,7 +24,7 @@
             <div class="card-body">
                 <p class="card-text">Product ID: @product.ProductID</p>
                 <p class="card-text">Unit price: @product.UnitPrice</p>
-                @if (product.UnitsInStock.Equals("0"))
+                @if (product.UnitsInStock.Equals(0))
                 {
                     <p class="card-text outOfStock">Units in stock: @product.UnitsInStock</p>
                 }
