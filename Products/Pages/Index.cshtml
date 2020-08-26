@@ -12,7 +12,7 @@
     @foreach (var product in Model.Products)
     {
         <div class="card-body">
-            <img src="~/Images/@product.ImagePath">
+            <img src="~/Images/@product.ImagePath" alt="Cannot display immage">
             <div class="card-header">
                 <h3 class="card-title">@product.ProductName</h3>
                 @if (product.UnitsInStock.Equals("0"))
