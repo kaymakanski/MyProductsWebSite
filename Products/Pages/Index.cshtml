@@ -21,17 +21,17 @@
                 }
             </div>
             <div class="table-warning">
-                <div style="padding-left: 30px;">Product ID: @product.ProductID</div>
-                <div style="padding-left: 30px">Unit price: @product.UnitPrice</div>
+                <p style="padding-left: 30px;">Product ID: @product.ProductID</p>
+                <p style="padding-left: 30px">Unit price: @product.UnitPrice</p>
                 @if (product.UnitsInStock.Equals("0"))
                 {
-                    <div style="color:red; padding-left: 30px">Units in stock: @product.UnitsInStock</div>
+                    <p style="color:red; padding-left: 30px">Units in stock: @product.UnitsInStock</p>
                 }
                 else
                 {
-                    <div style="color:green; padding-left: 30px">Units in stock: @product.UnitsInStock</div>
+                    <p style="color:green; padding-left: 30px">Units in stock: @product.UnitsInStock</p>
                 }
-                <div style="padding-left: 30px">Delivery on: @product.DeliveryOn</div>
+                <p style="padding-left: 30px">Delivery on: @product.DeliveryOn</p>
             </div>
         </div>
     }
