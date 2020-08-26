@@ -15,7 +15,9 @@ namespace Products.Models
         public string UnitsInStock { get; set; }
         public string DeliveryOn { get; set; }
 
-        public override string ToString() => JsonSerializer.Serialize<Product>(this);
-        
+        public override string ToString()
+        {
+            return JsonSerializer.Serialize<Product>(this);
+        }
     }
 }
