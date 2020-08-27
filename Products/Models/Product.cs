@@ -9,6 +9,7 @@ namespace Products.Models
     public class Product
     {
         public int ProductID { get; set; }
+        public int ButtonID { get; set; }
         public string ImagePath { get; set; }
         public string ProductName { get; set; }
         public double UnitPrice { get; set; }

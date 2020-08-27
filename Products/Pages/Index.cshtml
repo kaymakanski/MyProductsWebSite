@@ -12,7 +12,7 @@
     @foreach (var product in Model.Products)
     {
 
-        <div class="card mb-3 bg-light">
+        <div class="card mb-3 bg-light" id="@product.ProductID">
             <div class="card-header">
                 <img src="~/Images/@product.ImagePath" alt="Cannot display image" width="100" height="100">
                 <h3 class="card-title">@product.ProductName</h3>
@@ -33,9 +33,22 @@
                     <p class="card-text inStock">Units in stock: @product.UnitsInStock</p>
                     <p class="card-text">Delivery on: @product.DeliveryOn</p>
                 }
+                <br>
+
+                <input type="button" id="@product.ButtonID" value="Delete">
+
+                <script>
+                    document.getElementById(@product.ButtonID).addEventListener("click", function ()
+                    {
+                        var item = document.getElementById(@product.ProductID)
+                        item.style.display = "none";
+                    })
+                </script>
             </div>
         </div>
     }
 </div>
+
+
 
 
